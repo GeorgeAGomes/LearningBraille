@@ -44,9 +44,7 @@ class Authentication{
     }
     
     func rxLogin(with email: String,_ password: String) -> Observable<AutheticationStatus>  {
-       
         return Observable<AutheticationStatus>.create{ observer in
-        
             Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
                 if err == nil {
                     observer.onNext(.success(res!))
